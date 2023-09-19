@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.viewport {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    flex-basis: 20rem;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.carousel {
+    display: flex;
+    margin-left: -100%;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: margin .5s;
+}
+
+.model {
+    background-color: transparent;
+    perspective: 1000px;
+    opacity: .5;
+
+
+    flex-grow: 1;
+    height: 500px;
+    display: flex;
+    position: relative;
+    padding: 0 1rem;
+    font-size: 2rem;
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+.card {
+    background-color: #606;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    transform-style: preserve-3d;
+    
+    border-radius: 1rem;
+    outline: 2px solid #000;
+    transition: background-color .2s, scale .2s, outline .2s, transform .5s;
+    pointer-events: none;
+}
+
+.card:hover {
+    outline: 2px solid #fff;
+}
+
+.cardVista {
+    scale: 1.09;
+    pointer-events: inherit;
+}
+.modelVista {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.content {
+    text-align: center;
+    width: 100%;
+    color: yellow;
+}
+
+.turn{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    padding: .3125rem;
+    justify-content: flex-end;
+    border: none;
+    align-self: end;
+}
+.turn svg{
+    width: 20%;
+    color: #2f2;
+    cursor: pointer;
+}
+.turn_back{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    padding: .3125rem;
+    border: none;
+    align-self: end;
+}
+.turn_back svg{
+    width: 20%;
+    color: #2f2;
+    cursor: pointer;
+}
+
+
+.contBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: .3125rem;
+}
+
+.btn {
+    background-color: #000;
+    width: 20%;
+    outline: none;
+    border: none;
+    transition: background-color .2s;
+}
+
+.btn svg {
+    cursor: pointer;
+    color: #0ffa;
+    width: 100%;
+    transition: color .2s, scale .2s;
+}
+
+.btn svg:hover {
+    color: #0ff;
+    scale: 1.1;
+}
